@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS authorities;
 
 CREATE TABLE users (
     username varchar(48) NOT NULL,
-    password char(60) NOT NULL,
+    password char(68) NOT NULL,
     enabled boolean NOT NULL,
     full_name varchar(128) NOT NULL,
 
@@ -24,7 +24,7 @@ CREATE TABLE authorities (
 
 INSERT INTO users(username, password, enabled, full_name)
 VALUES ("michael", "{bcrypt}$2a$10$j5nhuwVk7yXzQgfmIej2keXYJNDYe3VAarwebl1iEmCmbu39IfI/K", true, "Michael Bay"),
-       ("mabel", "{bcyrpt}$2a$10$/g1ttjgcBUMRqhlVEUrDVuDhnKNnIAmMB8QCibp.6POz5SwsWbAE.", true, "Mabel Lynn");
+       ("mabel", "{bcrypt}$2a$10$/g1ttjgcBUMRqhlVEUrDVuDhnKNnIAmMB8QCibp.6POz5SwsWbAE.", true, "Mabel Lynn");
 
 INSERT INTO authorities(username, authority)
 VALUES ("michael", "ROLE_USER"),
