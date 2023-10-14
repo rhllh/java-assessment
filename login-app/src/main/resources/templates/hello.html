@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Application - Hello</title>
+</head>
+<body>
+    <h1><span th:text="#{hello}"></span>, <span th:text="*{userDetails.getUsername}"></span>!</h1>
+    <div>
+        <p><span th:text="#{username}"></span>: <span th:text="*{userDetails.getUsername}"></span></p>
+        <p><span th:text="#{full-name}"></span>: <span th:text="*{userDetails.getFullName}"></span></p>
+        <p><span th:text="#{roles}"></span>: 
+            <span th:each="role, iterStat : *{userDetails.getAuthorities}">
+                <span th:text="${role}"></span>
+                <span th:unless="${iterStat.last}">, </span>
+            </span> 
+        </p>
+    </div>
+    <div sec:authorize="hasRole('MANAGER')">
+        <p><a th:href="@{/restricted}" th:text="#{restricted-link}"></a></p>
+    </div>
+    <div>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" th:value="#{sign-out}"/>
+        </form>
+    </div>
+    <div>
+        <p>
+            <span th:text="#{language} + ':'"></span>
+            <a th:href="@{'?lang=en'}" th:text="#{english-language}"></a> / 
+            <a th:href="@{'?lang=ko'}" th:text="#{korean-language}"></a>
+        </p>
+    </div>
+</body>
+</html>

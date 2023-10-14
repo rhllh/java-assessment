@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Application - Error</title>
+</head>
+<body>
+    <h1><span th:text="#{permission-message}"></span>.</h1>
+    <p><a th:href="@{/}" th:text="#{go-back}"></a></p>
+
+    <div>
+        <p>
+            <span th:text="#{language} + ':'"></span>
+            <a th:href="@{'?lang=en'}" th:text="#{english-language}"></a> / 
+            <a th:href="@{'?lang=ko'}" th:text="#{korean-language}"></a>
+        </p>
+    </div>
+</body>
+</html>
