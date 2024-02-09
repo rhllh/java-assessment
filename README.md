@@ -1,6 +1,6 @@
-# dxc-assessment
+# java-assessment
 
-Run `git clone https://github.com/rhllh/dxc-assessment.git` in your local folder.
+Run `git clone https://github.com/rhllh/java-assessment.git` in your local folder.
 
 ## task #1 (encoder-decoder)
 
